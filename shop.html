@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shop | AdorneeCo</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f5dc;
+      color: #4d2c1d;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff0c9;
+      padding: 10px 40px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      height: 95px;
+      object-fit: contain;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li {
+      display: inline;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #4d2c1d;
+      font-weight: bold;
+    }
+
+    .icons {
+      display: flex;
+      gap: 15px;
+      font-size: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 30px 0 10px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      padding: 20px 40px;
+    }
+
+    .product-card {
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.2s;
+      cursor: pointer;
+    }
+
+    .product-card:hover {
+      transform: scale(1.03);
+    }
+
+    .product-card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .product-name {
+      font-weight: bold;
+      margin: 8px 0 5px;
+    }
+
+    .product-price {
+      color: #a52a2a;
+      font-size: 14px;
+    }
+
+    .rating {
+      color: gold;
+      font-size: 13px;
+    }
+
+    .banner-duo {
+  display: flex;
+  gap: 20px;
+  padding: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.banner-item {
+  position: relative;
+  width: 45%;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.banner-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+}
+
+.banner-item:hover {
+  transform: scale(1.02);
+}
+
+.text-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 6px rgba(0,0,0,0.5);
+}
+
+.kategori-banner {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 3rem 2rem;
+  background-color: #fff8ec;
+}
+
+.kategori-item {
+  position: relative;
+  width: 250px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.kategori-item:hover {
+  transform: translateY(-5px);
+}
+
+.kategori-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.kategori-btn {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #a0522d;
+  color: white;
+  padding: 0.7rem 1.4rem;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.kategori-btn:hover {
+  background-color: #84401d;
+}
+
+
+    .products-section {
+  padding: 3rem 2rem;
+  background-color: #fffaf0;
+  text-align: center;
+}
+
+.site-footer {
+  background-color: #633c1d;
+  color: #fff;
+  padding: 3rem 2rem 1rem;
+  font-size: 0.95rem;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: auto;
+  gap: 2rem;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #fdd8a1;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+  color: #ffeccf;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+}
+
+.sosmed-icons a img {
+  width: 28px;
+  margin-right: 10px;
+  transition: transform 0.2s;
+}
+
+.sosmed-icons a:hover img {
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid #ffffff30;
+  font-size: 0.85rem;
+  color: #ffeacc;
+}
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Logo AdorneeCo" class="logo" />
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+    <div class="icons">
+        <li><a href="#"><i class="fas fa-search"></i></a></li>
+        <li><a href="#"><i class="fas fa-heart"></i></a></li>
+        <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+        <li><a href="#"><i class="fas fa-profil"></i></a></li>
+    </div>
+  </header>
+
+  <h2>Produk Sesuai di Cari</h2>
+
+  <section class="product-grid">
+    <div class="product-card" onclick="location.href='detail.html?id=1'">
+      <img src="jam.jpeg" alt="Produk 1" />
+      <div class="product-name">Jam Tangan Sport</div>
+      <div class="product-price">Rp 500.000</div>
+      <div class="rating">★★★★☆</div>
+    </div>
+    <div class="product-card" onclick="location.href='detail.html?id=2'">
+      <img src="acc1.jpeg" alt="Produk 2" />
+      <div class="product-name">Jedai Aesthetic</div>
+      <div class="product-price">Rp 10.000</div>
+      <div class="rating">★★★★★</div>
+    </div>
+    <div class="product-card" onclick="location.href='detail.html?id=3'">
+      <img src="acc2.jpeg" alt="Produk 3" />
+      <div class="product-name">Bando Lucu</div>
+      <div class="product-price">Rp 15.000</div>
+      <div class="rating">★★★★☆</div>
+    </div>
+    <div class="product-card" onclick="location.href='detail.html?id=3'">
+        <img src="kacamata1.jpeg" alt="Produk 4" />
+        <div class="product-name">Kacamata Hitam Pria</div>
+        <div class="product-price">Rp 50.000</div>
+        <div class="rating">★★★★☆</div>
+      </div>
+    
+      <div class="product-card" onclick="location.href='detail.html?id=3'">
+        <img src="kalung.jpeg" alt="Produk 5" />
+        <div class="product-name">Kalung Y2K viral</div>
+        <div class="product-price">Rp 50.000</div>
+        <div class="rating">★★★★★</div>
+      </div>
+   
+      <div class="product-card" onclick="location.href='detail.html?id=3'">
+        <img src="gelang3.jpeg" alt="Produk 6" />
+        <div class="product-name">Gelang Pandora</div>
+        <div class="product-price">Rp 1.500.000</div>
+        <div class="rating">★★★★★</div>
+      </div>
+   
+      <div class="product-card" onclick="location.href='detail.html?id=3'">
+        <img src="gelang1.jpeg" alt="Produk 7" />
+        <div class="product-name">Gelang Pandora</div>
+        <div class="product-price">Rp 1.650.000</div>
+        <div class="rating">★★★★★</div>
+      </div>
+
+      <div class="product-card" onclick="location.href='detail.html?id=3'">
+        <img src="dompet1.jpeg" alt="Produk 8" />
+        <div class="product-name">Dompet Hermes Pria</div>
+        <div class="product-price">Rp 1.505.000</div>
+        <div class="rating">★★★★★</div>
+      </div>
+      
+      <div class="product-card" onclick="location.href='detail.html?id=3'">
+        <img src="tas2.jpg" alt="Produk 9" />
+        <div class="product-name">Tas Pria</div>
+        <div class="product-price">Rp 2.200.000</div>
+        <div class="rating">★★★★★</div>
+      </div>
+
+      <div class="product-card" onclick="location.href='detail.html?id=3'">
+        <img src="jam1.jpg" alt="Produk 10" />
+        <div class="product-name">Jam Couple </div>
+        <div class="product-price">Rp 950.000</div>
+        <div class="rating">★★★★★</div>
+      </div>
+
+      <div class="product-card" onclick="location.href='detail.html?id=3'">
+        <img src="tas1.jpg" alt="Produk 11" />
+        <div class="product-name">YSL Shoulder Bag</div>
+        <div class="product-price">Rp 2.950.000</div>
+        <div class="rating">★★★★★</div>
+      </div>
+
+      <div class="product-card" onclick="location.href='detail.html?id=3'">
+        <img src="kacamata4.jpeg" alt="Produk 12" />
+        <div class="product-name">Kacamata Balenciaga</div>
+        <div class="product-price">Rp 5.999.000</div>
+        <div class="rating">★★★★★</div>
+      </div>
+  </section>
+
+  <section class="banner-duo">
+    <div class="banner-item" onclick="location.href='shop.html?kategori=wanita'">
+      <img src="banner2.png" alt="Model Wanita" />
+      <div class="text-overlay">Tampil Stylish</div>
+    </div>
+    <div class="banner-item" onclick="location.href='shop.html?kategori=pria'">
+      <img src="banner1.jpeg" alt="Model Pria" />
+      <div class="text-overlay">Gaya Kerenmu</div>
+    </div>
+  </section>
+  
+    <h2>Mix & Match Kategori Pilihanmu!</h2>
+  <section class="kategori-banner">
+    <div class="kategori-item">
+      <img src="model1.jpeg" alt="Kategori Kacamata">
+      <a href="produk.html?kategori=tas" class="kategori-btn">Shop Now</a>
+    </div>
+    <div class="kategori-item">
+      <img src="model2.jpeg" alt="Kategori Aksesoris Rambut">
+      <a href="produk.html?kategori=jam" class="kategori-btn">Shop Now</a>
+    </div>
+    <div class="kategori-item">
+      <img src="model3.jpeg" alt="Kategori Aksesoris Rambut">
+      <a href="produk.html?kategori=aksesoris" class="kategori-btn">Shop Now</a>
+    </div>
+    <div class="kategori-item">
+        <img src="model4.jpeg" alt="Kategori Bag">
+        <a href="produk.html?kategori=kacamata" class="kategori-btn">Shop Now</a>
+      </div>
+  </section>
+
+
+    <h2>Kamu Mungkin Suka Produk Ini <i class="fi fi-ss-heart"></i></h2>
+  <section class="product-grid">
+    <div class="product-card" onclick="location.href='detail.html?id=1'">
+      <img src="headphone1.jpeg" alt="Produk 1" />
+      <div class="product-name">Headphone </div>
+      <div class="product-price">Rp 5.500.000</div>
+      <div class="rating">★★★★☆</div>
+    </div>
+    <div class="product-card" onclick="location.href='detail.html?id=2'">
+      <img src="tws.jpeg" alt="Produk 2" />
+      <div class="product-name"></div>Tws Y2K
+      <div class="product-price">Rp 10.000</div>
+      <div class="rating">★★★★★</div>
+    </div>
+    <div class="product-card" onclick="location.href='detail.html?id=3'">
+      <img src="headphone2.jpeg" alt="Produk 3" />
+      <div class="product-name">AirPods Max Lucu</div>
+      <div class="product-price">Rp 10.000.000</div>
+      <div class="rating">★★★★☆</div>
+    </div>
+    <div class="product-card" onclick="location.href='detail.html?id=3'">
+        <img src="tas channel.jpg" alt="Produk 3" />
+        <div class="product-name">Kacamata Hitam Pria</div>
+        <div class="product-price">Rp 9.000.000</div>
+        <div class="rating">★★★★☆</div>
+      </div>
+    
+      <div class="product-card" onclick="location.href='detail.html?id=3'">
+        <img src="topi.jpg" alt="Produk 3" />
+        <div class="product-name">Topi Celine</div>
+        <div class="product-price">Rp 10.999.000</div>
+        <div class="rating">★★★★★</div>
+      </div>
+   
+      <div class="product-card" onclick="location.href='detail.html?id=3'">
+        <img src="jam.jpeg" alt="Produk 3" />
+        <div class="product-name">Gelang Pandora</div>
+        <div class="product-price">Rp 2.500.000</div>
+        <div class="rating">★★★★★</div>
+      </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+  
+      <div class="footer-section">
+        <h3>Tentang Kami</h3>
+        <p>AdorneeCo adalah toko online fashion yang menyediakan aksesoris dan produk trendi untuk kamu yang stylish!</p>
+      </div>
+  
+      <div class="footer-section">
+        <h3>Bantuan</h3>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Cara Pembelian</a></li>
+          <li><a href="#">Pengembalian Barang</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-section">
+        <h3>Ikuti Kami</h3>
+        <div class="sosmed-icons">
+          <a href="#"><img src="instagram.svg" alt="Instagram"></a>
+          <a href="#"><img src="twitter.svg" alt="Twitter"></a>
+          <a href="#"><img src="tiktok.svg" alt="Tiktok"></a>
+        </div>
+      </div>
+  
+    </div>
+  
+    <div class="footer-bottom">
+      <p>&copy; 2025 AdorneeCo. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
