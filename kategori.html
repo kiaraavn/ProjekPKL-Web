@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f5dc;
+      color: #4d2c1d;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff0c9;
+      padding: 10px 40px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      height: 95px;
+      object-fit: contain;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li {
+      display: inline;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #4d2c1d;
+      font-weight: bold;
+    }
+
+    .icons {
+      display: flex;
+      gap: 15px;
+      font-size: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 30px 0 10px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      padding: 20px 40px;
+    }
+
+    .product-card {
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.2s;
+      cursor: pointer;
+    }
+
+    .product-card:hover {
+      transform: scale(1.03);
+    }
+
+    .product-card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .product-name {
+      font-weight: bold;
+      margin: 8px 0 5px;
+    }
+
+    .product-price {
+      color: #a52a2a;
+      font-size: 14px;
+    }
+
+    .rating {
+      color: gold;
+      font-size: 13px;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo AdorneeCo" class="logo" />
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </nav>
+        <div class="icons">
+            <li><a href="#"><i class="fas fa-search"></i></a></li>
+            <li><a href="#"><i class="fas fa-heart"></i></a></li>
+            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+            <li><a href="#"><i class="fas fa-profil"></i></a></li>
+        </div>
+      </header>
+    
+      <h2>Produk Sesuai di Cari</h2>
+    
+      <section class="product-grid">
+        <div class="product-card" onclick="location.href='detail.html?id=1'">
+          <img src="gambar/tas channel.jpg" alt="Produk 1" />
+          <div class="product-name">Tas Trendy Channel</div>
+          <div class="product-price">Rp 6.500.000</div>
+          <div class="rating">★★★★☆</div>
+        </div>
+        <div class="product-card" onclick="location.href='detail.html?id=2'">
+          <img src="gambar/tas1.jpg" alt="Produk 2" />
+          <div class="product-name">Tas YSL</div>
+          <div class="product-price">Rp 10.000</div>
+          <div class="rating">★★★★★</div>
+        </div>
+        <div class="product-card" onclick="location.href='detail.html?id=3'">
+          <img src="gambar/tas2.jpg" alt="Produk 3" />
+          <div class="product-name">Tas Pria </div>
+          <div class="product-price">Rp 15.000</div>
+          <div class="rating">★★★★☆</div>
+        </div>
+        <div class="product-card" onclick="location.href='detail.html?id=4'">
+            <img src="gambar/tas3.jpg" alt="Produk 4" />
+            <div class="product-name">Kacamata Hitam Pria</div>
+            <div class="product-price">Rp 50.000</div>
+            <div class="rating">★★★★☆</div>
+          </div>
+        
+          <div class="product-card" onclick="location.href='detail.html?id=5'">
+            <img src="gambar/tas4.jpg" alt="Produk 5" />
+            <div class="product-name">Kalung Y2K viral</div>
+            <div class="product-price">Rp 50.000</div>
+            <div class="rating">★★★★★</div>
+          </div>
+       
+          <div class="product-card" onclick="location.href='detail.html?id=6'">
+            <img src="gambar/tas5.jpg" alt="Produk 6" />
+            <div class="product-name">Gelang Pandora</div>
+            <div class="product-price">Rp 1.500.000</div>
+            <div class="rating">★★★★★</div>
+          </div>
+       
+          <div class="product-card" onclick="location.href='detail.html?id=7'">
+            <img src="gambar/tas6.jpg" alt="Produk 7" />
+            <div class="product-name">Gelang Pandora</div>
+            <div class="product-price">Rp 1.650.000</div>
+            <div class="rating">★★★★★</div>
+          </div>
+    
+          <div class="product-card" onclick="location.href='detail.html?id=8'">
+            <img src="gambar/tas7.jpg" alt="Produk 8" />
+            <div class="product-name">Dompet Hermes Pria</div>
+            <div class="product-price">Rp 1.505.000</div>
+            <div class="rating">★★★★★</div>
+          </div>
+          
+          <div class="product-card" onclick="location.href='detail.html?id=9'">
+            <img src="gambar/tas8.jpg" alt="Produk 9" />
+            <div class="product-name">Tas Pria</div>
+            <div class="product-price">Rp 2.200.000</div>
+            <div class="rating">★★★★★</div>
+          </div>
+    
+          <div class="product-card" onclick="location.href='detail.html?id=10'">
+            <img src="gambar/tas9.jpg" alt="Produk 10" />
+            <div class="product-name">Jam Couple </div>
+            <div class="product-price">Rp 950.000</div>
+            <div class="rating">★★★★★</div>
+          </div>
+    
+          <div class="product-card" onclick="location.href='detail.html?id=11'">
+            <img src="gambar/tas10.jpg" alt="Produk 11" />
+            <div class="product-name">YSL Shoulder Bag</div>
+            <div class="product-price">Rp 2.950.000</div>
+            <div class="rating">★★★★★</div>
+          </div>
+    
+          <div class="product-card" onclick="location.href='detail.html?id=12'">
+            <img src="gambar/tas11.jpg" alt="Produk 12" />
+            <div class="product-name">Kacamata Balenciaga</div>
+            <div class="product-price">Rp 5.999.000</div>
+            <div class="rating">★★★★★</div>
+          </div>
+      </section>
+</body>
+</html>
