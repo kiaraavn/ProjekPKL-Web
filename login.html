@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Login & Daftar</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5d5;
+    }
+
+    .container {
+      display: flex;
+      max-width: 900px;
+      margin: 50px auto;
+      background-color: #fff1cc;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .form-section {
+      flex: 1;
+      padding: 30px;
+    }
+
+    .form-section:nth-child(1) {
+      background-color: #e3c98c;
+    }
+
+    .form-section h2 {
+      margin-bottom: 20px;
+      font-size: 20px;
+      color: #4b2e00;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+      color: #4b2e00;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      background-color: #800000;
+      color: white;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .dob {
+      display: flex;
+      gap: 10px;
+    }
+
+    .dob select {
+      flex: 1;
+    }
+
+    .button {
+      width: 100%;
+      padding: 12px;
+      background-color: #800000;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background-color: #a00000;
+    }
+
+    .right-info {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #4b2e00;
+    }
+
+    .right-info span {
+      color: #800000;
+      font-weight: bold;
+    }
+
+    .input-icon {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background-color: #800000;
+      padding: 10px;
+      border-radius: 8px;
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .input-icon i {
+      width: 20px;
+    }
+
+    nav {
+      background-color: #f5f5d5;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 20px 0;
+      font-weight: bold;
+      font-family: serif;
+    }
+
+    nav a {
+      color: #4b2e00;
+      text-decoration: none;
+    }
+  </style>
+
+  <!-- Font Awesome buat icon -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Shop</a>
+    <a href="#">About</a>
+    <a href="#">Login</a>
+  </nav>
+
+  <div class="container">
+    <!-- Daftar -->
+    <div class="form-section">
+      <h2>Pelanggan Baru</h2>
+      <form id="form-daftar">
+        <label for="email">Enter Email</label>
+        <input type="email" id="daftar-email" required>
+
+        <label for="password">Create Password</label>
+        <input type="password" id="daftar-password" required>
+
+        <div class="input-icon">
+            <i class="fas fa-calendar"></i>
+            <input type="date" id="tanggal-lahir" name="tanggal-lahir" required>
+          </div>
+          
+
+        <label>Nama Depan</label>
+        <input type="text" required>
+
+        <button type="submit" class="button">Konfirmasi dan Lanjutkan</button>
+      </form>
+    </div>
+
+    <form id="form-login">
+        <div class="input-icon">
+          <i class="fas fa-user"></i>
+          <input type="text" id="login-nama" placeholder="Full Name" required>
+        </div>
+      
+        <div class="input-icon">
+          <i class="fas fa-envelope"></i>
+          <input type="email" id="login-email" placeholder="Enter Email" required>
+        </div>
+      
+        <div class="input-icon">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="login-password" placeholder="Create Password" required>
+        </div>
+      
+        <button type="submit" class="button">Login</button>
+      </form>
+      
+
+  <script>
+    // Daftar
+    document.getElementById("form-daftar").addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("Berhasil daftar! Redirect ke home...");
+    window.location.href = "index.html";
+  });
+    
+//   login
+  document.getElementById("form-login").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const emailInput = document.getElementById("login-email").value.trim();
+    const passwordInput = document.getElementById("login-password").value.trim();
+    const nameInput = document.getElementById("login-nama").value.trim();
+
+    // Cek dulu kalo semua input diisi
+    if (!emailInput || !passwordInput || !nameInput) {
+      alert("Semua field harus diisi!");
+      return;
+    }
+
+    // Simulasi akun
+    const dummyEmail = "kiaravanda75@gmail.com";
+    const dummyPassword = "123456";
+
+    if (emailInput === dummyEmail && passwordInput === dummyPassword) {
+      alert("Login berhasil! Hai, " + nameInput);
+      window.location.href = "index.html";
+    } else {
+      alert("Email atau Password salah! Coba lagi.");
+    }
+  });
+
+</script>
+
+  </script>
+</body>
+</html>
