@@ -42,11 +42,38 @@
       font-weight: bold;
     }
 
-    .icons {
-      display: flex;
-      gap: 15px;
-      font-size: 20px;
-    }
+    .search-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 1rem;
+}
+
+.search-box input {
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  width: 300px;
+  outline: none;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.icons a {
+  text-decoration: none;
+  color: #4a3a0c; 
+  font-size: 18px;
+}
+
+.icons li {
+  list-style: none;
+}
+
 
     h2 {
       text-align: center;
@@ -55,7 +82,7 @@
 
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      grid-template-columns: repeat(5, 1fr);
       gap: 20px;
       padding: 20px 40px;
     }
@@ -75,9 +102,12 @@
     }
 
     .product-card img {
-      width: 100%;
-      border-radius: 8px;
+    width: 100%;         
+    height: 250px;       
+    object-fit: cover;   
+    border-radius: 10px; 
     }
+
 
     .product-name {
       font-weight: bold;
@@ -93,23 +123,91 @@
       color: gold;
       font-size: 13px;
     }
+
+    .site-footer {
+  background-color: #633c1d;
+  color: #fff;
+  padding: 3rem 2rem 1rem;
+  font-size: 0.95rem;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: auto;
+  gap: 2rem;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #fdd8a1;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+  color: #ffeccf;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+}
+
+.sosmed-icons a img {
+  width: 28px;
+  margin-right: 10px;
+  transition: transform 0.2s;
+}
+
+.sosmed-icons a:hover img {
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid #ffffff30;
+  font-size: 0.85rem;
+  color: #ffeacc;
+}
+
     </style>
 </head>
 <body>
     <header>
-        <img src="logo.png" alt="Logo AdorneeCo" class="logo" />
+        <img src="gambar/logo.png" alt="Logo AdorneeCo" class="logo" />
         <nav>
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html">About</a></li>
           </ul>
         </nav>
+        <div class="search-box">
+          <input type="text" placeholder="Cari produk, tren, dan merek...">
+        </div>
+        
         <div class="icons">
-            <li><a href="#"><i class="fas fa-search"></i></a></li>
-            <li><a href="#"><i class="fas fa-heart"></i></a></li>
-            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-            <li><a href="#"><i class="fas fa-profil"></i></a></li>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+            <li><a href="heart.html"><i class="fas fa-heart"></i></a>
+            <li><a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+            <li><a href="user.html"><i class="fas fa-profil"></i></a>
         </div>
       </header>
     
@@ -117,85 +215,855 @@
     
       <section class="product-grid">
         <div class="product-card" onclick="location.href='detail.html?id=1'">
+          <div class="produk" data-kategori="tas">
           <img src="gambar/tas channel.jpg" alt="Produk 1" />
           <div class="product-name">Tas Trendy Channel</div>
           <div class="product-price">Rp 6.500.000</div>
           <div class="rating">★★★★☆</div>
         </div>
+        </div>
         <div class="product-card" onclick="location.href='detail.html?id=2'">
+          <div class="produk" data-kategori="tas">
           <img src="gambar/tas1.jpg" alt="Produk 2" />
           <div class="product-name">Tas YSL</div>
           <div class="product-price">Rp 10.000</div>
           <div class="rating">★★★★★</div>
+          </div>
         </div>
         <div class="product-card" onclick="location.href='detail.html?id=3'">
-          <img src="gambar/tas2.jpg" alt="Produk 3" />
+          <div class="produk" data-kategori="tas">
+          <img src="gambar/tas19.jpeg" alt="Produk 3" />
           <div class="product-name">Tas Pria </div>
           <div class="product-price">Rp 15.000</div>
           <div class="rating">★★★★☆</div>
+          </div>
         </div>
         <div class="product-card" onclick="location.href='detail.html?id=4'">
-            <img src="gambar/tas3.jpg" alt="Produk 4" />
-            <div class="product-name">Kacamata Hitam Pria</div>
+          <div class="produk" data-kategori="tas">
+            <img src="gambar/tas20.jpeg" alt="Produk 4" />
+            <div class="product-name">Shoulder Bag Pria</div>
             <div class="product-price">Rp 50.000</div>
             <div class="rating">★★★★☆</div>
+            </div>
           </div>
         
           <div class="product-card" onclick="location.href='detail.html?id=5'">
+            <div class="produk" data-kategori="tas">
             <img src="gambar/tas4.jpg" alt="Produk 5" />
-            <div class="product-name">Kalung Y2K viral</div>
+            <div class="product-name">Handbag miu miu</div>
             <div class="product-price">Rp 50.000</div>
             <div class="rating">★★★★★</div>
+            </div>
           </div>
        
           <div class="product-card" onclick="location.href='detail.html?id=6'">
+            <div class="produk" data-kategori="tas">
             <img src="gambar/tas5.jpg" alt="Produk 6" />
-            <div class="product-name">Gelang Pandora</div>
+            <div class="product-name">Sling bag YSL</div>
             <div class="product-price">Rp 1.500.000</div>
             <div class="rating">★★★★★</div>
+            </div>
           </div>
        
           <div class="product-card" onclick="location.href='detail.html?id=7'">
+            <div class="produk" data-kategori="tas">
             <img src="gambar/tas6.jpg" alt="Produk 7" />
-            <div class="product-name">Gelang Pandora</div>
+            <div class="product-name">Handbag Gucci</div>
             <div class="product-price">Rp 1.650.000</div>
             <div class="rating">★★★★★</div>
+            </div>
           </div>
     
           <div class="product-card" onclick="location.href='detail.html?id=8'">
+            <div class="produk" data-kategori="tas">
             <img src="gambar/tas7.jpg" alt="Produk 8" />
-            <div class="product-name">Dompet Hermes Pria</div>
+            <div class="product-name">Mossdom Sling bag</div>
             <div class="product-price">Rp 1.505.000</div>
             <div class="rating">★★★★★</div>
+            </div>
           </div>
           
           <div class="product-card" onclick="location.href='detail.html?id=9'">
+            <div class="produk" data-kategori="tas">
             <img src="gambar/tas8.jpg" alt="Produk 9" />
-            <div class="product-name">Tas Pria</div>
+            <div class="product-name">Dior Sling bag</div>
             <div class="product-price">Rp 2.200.000</div>
             <div class="rating">★★★★★</div>
+            </div>
           </div>
     
           <div class="product-card" onclick="location.href='detail.html?id=10'">
+            <div class="produk" data-kategori="tas">
             <img src="gambar/tas9.jpg" alt="Produk 10" />
-            <div class="product-name">Jam Couple </div>
+            <div class="product-name">Shoulder bag Gucci </div>
             <div class="product-price">Rp 950.000</div>
             <div class="rating">★★★★★</div>
+            </div>
           </div>
     
           <div class="product-card" onclick="location.href='detail.html?id=11'">
+            <div class="produk" data-kategori="tas">
             <img src="gambar/tas10.jpg" alt="Produk 11" />
-            <div class="product-name">YSL Shoulder Bag</div>
+            <div class="product-name">Dior Shoulder Bag</div>
             <div class="product-price">Rp 2.950.000</div>
             <div class="rating">★★★★★</div>
+            </div>
           </div>
     
           <div class="product-card" onclick="location.href='detail.html?id=12'">
+            <div class="produk" data-kategori="tas">
             <img src="gambar/tas11.jpg" alt="Produk 12" />
-            <div class="product-name">Kacamata Balenciaga</div>
+            <div class="product-name">Dior Shoulder bag</div>
             <div class="product-price">Rp 5.999.000</div>
             <div class="rating">★★★★★</div>
+            </div>
           </div>
+
+          <div class="product-card" onclick="location.href='detail.html?id=13'">
+            <div class="produk" data-kategori="tas">
+            <img src="gambar/tas12.jpeg" alt="Produk 12" />
+            <div class="product-name">LV Shoulder bag</div>
+            <div class="product-price">Rp 5.999.000</div>
+            <div class="rating">★★★★★</div>
+            </div>
+          </div>
+
+          <div class="product-card" onclick="location.href='detail.html?id=14'">
+            <div class="produk" data-kategori="tas">
+            <img src="gambar/tas13.jpeg" alt="Produk 12" />
+            <div class="product-name">Carit&Koty Shoulder bag</div>
+            <div class="product-price">Rp 5.999.000</div>
+            <div class="rating">★★★★★</div>
+            </div>
+          </div>
+
+          <div class="product-card" onclick="location.href='detail.html?id=15'">
+            <div class="produk" data-kategori="tas">
+            <img src="gambar/tas14.jpeg" alt="Produk 12" />
+            <div class="product-name">Carit&Koty Shoulder bag</div>
+            <div class="product-price">Rp 5.999.000</div>
+            <div class="rating">★★★★★</div>
+            </div>
+          </div>
+
+          <div class="product-card" onclick="location.href='detail.html?id=16'">
+            <div class="produk" data-kategori="tas">
+            <img src="gambar/tas15.jpeg" alt="Produk 12" />
+            <div class="product-name"> Shoulder bag</div>
+            <div class="product-price">Rp 5.999.000</div>
+            <div class="rating">★★★★★</div>
+            </div>
+          </div>
+
+          <div class="product-card" onclick="location.href='detail.html?id=17'">
+            <div class="produk" data-kategori="tas">
+            <img src="gambar/tas16.jpeg" alt="Produk 12" />
+            <div class="product-name">YSL new Shoulder bag</div>
+            <div class="product-price">Rp 5.999.000</div>
+            <div class="rating">★★★★★</div>
+            </div>
+          </div>
+
+          <div class="product-card" onclick="location.href='detail.html?id=18'">
+            <div class="produk" data-kategori="tas"><
+            <img src="gambar/tas17.jpeg" alt="Produk 12" />
+            <div class="product-name">Celine Shoulder bag</div>
+            <div class="product-price">Rp 5.999.000</div>
+            <div class="rating">★★★★★</div>
+            </div>
+          </div>
+
+          <div class="product-card" onclick="location.href='detail.html?id=19'">
+            <div class="produk" data-kategori="tas">
+            <img src="gambar/tas18.jpeg" alt="Produk 12" />
+            <div class="product-name">Chasler&Kratch Sling bag</div>
+            <div class="product-price">Rp 5.999.000</div>
+            <div class="rating">★★★★★</div>
+            </div>
+          </div>
+
+          <div class="product-card" onclick="location.href='detail.html?id=20'">
+            <div class="produk" data-kategori="tas">
+            <img src="gambar/tas3.jpg" alt="Produk 12" />
+            <div class="product-name">Christian Dior Shoulder bag</div>
+            <div class="product-price">Rp 5.999.000</div>
+            <div class="rating">★★★★★</div>
+            </div>
+          </div>
+
+          <div class="product-card" onclick="location.href='detail.html?id=21'">
+            <div class="produk" data-kategori="tas">
+            <img src="gambar/tas2.jpg" alt="Produk 12" />
+            <div class="product-name">LV Men Shoulder bag</div>
+            <div class="product-price">Rp 5.999.000</div>
+            <div class="rating">★★★★★</div>
+            </div>
+          </div>
+
+          <div class="product-card" onclick="location.href='detail.html?id=22'">
+            <div class="produk" data-kategori="tas">
+            <img src="gambar/tas21.jpeg" alt="Produk 12" />
+            <div class="product-name"> Sling bag Men</div>
+            <div class="product-price">Rp 5.999.000</div>
+            <div class="rating">★★★★★</div>
+            </div>
+          </div>
+
+          <div class="product-card" onclick="location.href='detail.html?id=23'">
+            <div class="produk" data-kategori="tas">
+            <img src="gambar/tas22.jpeg" alt="Produk 12" />
+            <div class="product-name"> Shoulder bag Men</div>
+            <div class="product-price">Rp 5.999.000</div>
+            <div class="rating">★★★★★</div>
+            </div>
+          </div>
+
+          <div class="product-card" onclick="location.href='detail.html?id=24'">
+            <div class="produk" data-kategori="tas">
+            <img src="gambar/tas23.jpeg" alt="Produk 12" />
+            <div class="product-name"> Shoulder bag Men kece</div>
+            <div class="product-price">Rp 5.999.000</div>
+            <div class="rating">★★★★★</div>
+            </div>
+          </div>
+
+          <div class="product-card" onclick="location.href='detail.html?id=25'">
+            <div class="produk" data-kategori="tas">
+            <img src="gambar/tas24.jpeg" alt="Produk 12" />
+            <div class="product-name"> Special Shoulder bag</div>
+            <div class="product-price">Rp 5.999.000</div>
+            <div class="rating">★★★★★</div>
+            </div>
+          </div>
+
+          <div class="product-card" onclick="location.href='detail.html?id=26'">
+            <div class="produk" data-kategori="tas">
+            <img src="gambar/tas25.jpeg" alt="Produk 12" />
+            <div class="product-name">LV Shoulder&Handbag</div>
+            <div class="product-price">Rp 5.999.000</div>
+            <div class="rating">★★★★★</div>
+            </div>
+          </div>
+
+          <div class="product-card" onclick="location.href='detail.html?id=27'">
+            <div class="produk" data-kategori="tas">
+            <img src="gambar/tas26.jpeg" alt="Produk 12" />
+            <div class="product-name">New Sling bag Men</div>
+            <div class="product-price">Rp 5.999.000</div>
+            <div class="rating">★★★★★</div>
+            </div>
+          </div>
+
+          <div class="product-card" onclick="location.href='detail.html?id=28'">
+            <div class="produk" data-kategori="tas">
+            <img src="gambar/tas27.jpeg" alt="Produk 12" />
+            <div class="product-name">Coach Handbag Men </div>
+            <div class="product-price">Rp 5.999.000</div>
+            <div class="rating">★★★★★</div>
+            </div>
+          </div>
+
+          <div class="product-card" onclick="location.href='detail.html?id=29'">
+            <div class="produk" data-kategori="tas">
+            <img src="gambar/tas28.jpeg" alt="Produk 12" />
+            <div class="product-name">Coach Handbag Men New</div>
+            <div class="product-price">Rp 5.999.000</div>
+            <div class="rating">★★★★★</div>
+            </div>
+          </div>
+
+          <div class="product-card" onclick="location.href='detail.html?id=30'">
+            <div class="produk" data-kategori="tas">
+            <img src="gambar/tas29.jpeg" alt="Produk 12" />
+            <div class="product-name">Carzy Horse Shoulder bag</div>
+            <div class="product-price">Rp 5.999.000</div>
+            <div class="rating">★★★★★</div>
+            </div>
+          </div>
+
+          <!-- Kategori Aksesoris Tangan -->
+          <div class="product-card" onclick="location.href='detail.html?id=1'">
+            <div class="produk" data-kategori="Aksesoris Tangan">
+            <img src="gambar/gelang1.jpeg" alt="Produk 1" />
+            <div class="product-name">Tas Trendy Channel</div>
+            <div class="product-price">Rp 6.500.000</div>
+            <div class="rating">★★★★☆</div>
+          </div>
+          </div>
+          <div class="product-card" onclick="location.href='detail.html?id=2'">
+            <div class="produk" data-kategori="Aksesoris Tangan">
+            <img src="gambar/gelang2.jpeg" alt="Produk 2" />
+            <div class="product-name">Tas YSL</div>
+            <div class="product-price">Rp 10.000</div>
+            <div class="rating">★★★★★</div>
+            </div>
+          </div>
+          <div class="product-card" onclick="location.href='detail.html?id=3'">
+            <div class="produk" data-kategori="Aksesoris Tangan">
+            <img src="gambar/gelang3.jpeg" alt="Produk 3" />
+            <div class="product-name">Tas Pria </div>
+            <div class="product-price">Rp 15.000</div>
+            <div class="rating">★★★★☆</div>
+            </div>
+          </div>
+          <div class="product-card" onclick="location.href='detail.html?id=4'">
+            <div class="produk" data-kategori="Aksesoris Tangan">
+              <img src="gambar/jam.jpeg" alt="Produk 4" />
+              <div class="product-name">Shoulder Bag Pria</div>
+              <div class="product-price">Rp 50.000</div>
+              <div class="rating">★★★★☆</div>
+              </div>
+            </div>
+          
+            <div class="product-card" onclick="location.href='detail.html?id=5'">
+              <div class="produk" data-kategori="Aksesoris Tangan">
+              <img src="gambar/jam.jpg" alt="Produk 5" />
+              <div class="product-name">Handbag miu miu</div>
+              <div class="product-price">Rp 50.000</div>
+              <div class="rating">★★★★★</div>
+              </div>
+            </div>
+         
+            <div class="product-card" onclick="location.href='detail.html?id=6'">
+              <div class="produk" data-kategori="Aksesoris Tangan">
+              <img src="gambar/jam1.jpg" alt="Produk 6" />
+              <div class="product-name">Sling bag YSL</div>
+              <div class="product-price">Rp 1.500.000</div>
+              <div class="rating">★★★★★</div>
+              </div>
+            </div>
+         
+            <div class="product-card" onclick="location.href='detail.html?id=7'">
+              <div class="produk" data-kategori="Aksesoris Tangan">
+              <img src="gambar/jam2.jpg" alt="Produk 7" />
+              <div class="product-name">Handbag Gucci</div>
+              <div class="product-price">Rp 1.650.000</div>
+              <div class="rating">★★★★★</div>
+              </div>
+            </div>
+      
+            <div class="product-card" onclick="location.href='detail.html?id=8'">
+              <div class="produk" data-kategori="Aksesoris Tangan">
+              <img src="gambar/jamW1 (1).jpeg" alt="Produk 8" />
+              <div class="product-name">Mossdom Sling bag</div>
+              <div class="product-price">Rp 1.505.000</div>
+              <div class="rating">★★★★★</div>
+              </div>
+            </div>
+            
+            <div class="product-card" onclick="location.href='detail.html?id=9'">
+              <div class="produk" data-kategori="Aksesoris Tangan">
+              <img src="gambar/jamW1 (2).jpeg" alt="Produk 9" />
+              <div class="product-name">Dior Sling bag</div>
+              <div class="product-price">Rp 2.200.000</div>
+              <div class="rating">★★★★★</div>
+              </div>
+            </div>
+      
+            <div class="product-card" onclick="location.href='detail.html?id=10'">
+              <div class="produk" data-kategori="Aksesoris Tangan">
+              <img src="gambar/jamW1 (3).jpeg" alt="Produk 10" />
+              <div class="product-name">Shoulder bag Gucci </div>
+              <div class="product-price">Rp 950.000</div>
+              <div class="rating">★★★★★</div>
+              </div>
+            </div>
+      
+            <div class="product-card" onclick="location.href='detail.html?id=11'">
+              <div class="produk" data-kategori="Aksesoris Tangan">
+              <img src="gambar/jamW1 (4).jpeg" alt="Produk 11" />
+              <div class="product-name">Dior Shoulder Bag</div>
+              <div class="product-price">Rp 2.950.000</div>
+              <div class="rating">★★★★★</div>
+              </div>
+            </div>
+      
+            <div class="product-card" onclick="location.href='detail.html?id=12'">
+              <div class="produk" data-kategori="Aksesoris Tangan">
+              <img src="gambar/jamW1 (5).jpeg" alt="Produk 12" />
+              <div class="product-name">Dior Shoulder bag</div>
+              <div class="product-price">Rp 5.999.000</div>
+              <div class="rating">★★★★★</div>
+              </div>
+            </div>
+  
+            <div class="product-card" onclick="location.href='detail.html?id=13'">
+              <div class="produk" data-kategori="Aksesoris Tangan">
+              <img src="gambar/jamW1 (6).jpeg" alt="Produk 12" />
+              <div class="product-name">LV Shoulder bag</div>
+              <div class="product-price">Rp 5.999.000</div>
+              <div class="rating">★★★★★</div>
+              </div>
+            </div>
+  
+            <div class="product-card" onclick="location.href='detail.html?id=14'">
+              <div class="produk" data-kategori="Aksesoris Tangan">
+              <img src="gambar/jamW1 (7).jpegg" alt="Produk 12" />
+              <div class="product-name">Carit&Koty Shoulder bag</div>
+              <div class="product-price">Rp 5.999.000</div>
+              <div class="rating">★★★★★</div>
+              </div>
+            </div>
+  
+            <div class="product-card" onclick="location.href='detail.html?id=15'">
+              <div class="produk" data-kategori="Aksesoris Tangan">
+              <img src="gambar/jamW1 (8).jpeg" alt="Produk 12" />
+              <div class="product-name">Carit&Koty Shoulder bag</div>
+              <div class="product-price">Rp 5.999.000</div>
+              <div class="rating">★★★★★</div>
+              </div>
+            </div>
+  
+            <div class="product-card" onclick="location.href='detail.html?id=16'">
+              <div class="produk" data-kategori="Aksesoris Tangan">
+              <img src="gambar/jamW1 (9).jpeg" alt="Produk 12" />
+              <div class="product-name"> Shoulder bag</div>
+              <div class="product-price">Rp 5.999.000</div>
+              <div class="rating">★★★★★</div>
+              </div>
+            </div>
+  
+            <div class="product-card" onclick="location.href='detail.html?id=17'">
+              <div class="produk" data-kategori="Aksesoris Tangan">
+              <img src="gambar/jamW1 (10).jpeg" alt="Produk 12" />
+              <div class="product-name">YSL new Shoulder bag</div>
+              <div class="product-price">Rp 5.999.000</div>
+              <div class="rating">★★★★★</div>
+              </div>
+            </div>
+  
+            <div class="product-card" onclick="location.href='detail.html?id=18'">
+              <div class="produk" data-kategori="Aksesoris Tangan">
+              <img src="gambar/jamW1 (11).jpeg" alt="Produk 12" />
+              <div class="product-name">Celine Shoulder bag</div>
+              <div class="product-price">Rp 5.999.000</div>
+              <div class="rating">★★★★★</div>
+              </div>
+            </div>
+  
+            <div class="product-card" onclick="location.href='detail.html?id=19'">
+              <div class="produk" data-kategori="Aksesoris Tangan">
+              <img src="gambar/jamW1 (12).jpeg" alt="Produk 12" />
+              <div class="product-name">Chasler&Kratch Sling bag</div>
+              <div class="product-price">Rp 5.999.000</div>
+              <div class="rating">★★★★★</div>
+              </div>
+            </div>
+  
+            <div class="product-card" onclick="location.href='detail.html?id=20'">
+              <div class="produk" data-kategori="Aksesoris Tangan">
+              <img src="gambar/jamW1 (13).jpeg" alt="Produk 12" />
+              <div class="product-name">Christian Dior Shoulder bag</div>
+              <div class="product-price">Rp 5.999.000</div>
+              <div class="rating">★★★★★</div>
+              </div>
+            </div>
+  
+            <div class="product-card" onclick="location.href='detail.html?id=21'">
+              <div class="produk" data-kategori="Aksesoris Tangan">
+              <img src="gambar/jamW1 (14).jpeg" alt="Produk 12" />
+              <div class="product-name">LV Men Shoulder bag</div>
+              <div class="product-price">Rp 5.999.000</div>
+              <div class="rating">★★★★★</div>
+              </div>
+            </div>
+  
+            <div class="product-card" onclick="location.href='detail.html?id=22'">
+              <div class="produk" data-kategori="Aksesoris Tangan">
+              <img src="gambar/jamW1 (15).jpeg" alt="Produk 12" />
+              <div class="product-name"> Sling bag Men</div>
+              <div class="product-price">Rp 5.999.000</div>
+              <div class="rating">★★★★★</div>
+              </div>
+            </div>
+  
+            <div class="product-card" onclick="location.href='detail.html?id=23'">
+              <div class="produk" data-kategori="Aksesoris Tangan">
+              <img src="gambar/jamW1 (16).jpeg" alt="Produk 12" />
+              <div class="product-name"> Shoulder bag Men</div>
+              <div class="product-price">Rp 5.999.000</div>
+              <div class="rating">★★★★★</div>
+              </div>
+            </div>
+  
+            <div class="product-card" onclick="location.href='detail.html?id=24'">
+              <div class="produk" data-kategori="Aksesoris Tangan">
+              <img src="gambar/gelangW (1).jpeg" alt="Produk 12" />
+              <div class="product-name"> Shoulder bag Men kece</div>
+              <div class="product-price">Rp 5.999.000</div>
+              <div class="rating">★★★★★</div>
+              </div>
+            </div>
+  
+            <div class="product-card" onclick="location.href='detail.html?id=25'">
+              <div class="produk" data-kategori="Aksesoris Tangan">
+              <img src="gambar/gelangW (2).jpeg" alt="Produk 12" />
+              <div class="product-name"> Special Shoulder bag</div>
+              <div class="product-price">Rp 5.999.000</div>
+              <div class="rating">★★★★★</div>
+              </div>
+            </div>
+  
+            <div class="product-card" onclick="location.href='detail.html?id=26'">
+              <div class="produk" data-kategori="Aksesoris Tangan">
+              <img src="gambar/gelangW (3).jpeg" alt="Produk 12" />
+              <div class="product-name">LV Shoulder&Handbag</div>
+              <div class="product-price">Rp 5.999.000</div>
+              <div class="rating">★★★★★</div>
+              </div>
+            </div>
+  
+            <div class="product-card" onclick="location.href='detail.html?id=27'">
+              <div class="produk" data-kategori="Aksesoris Tangan">
+              <img src="gambar/gelangW (4).jpeg" alt="Produk 12" />
+              <div class="product-name">New Sling bag Men</div>
+              <div class="product-price">Rp 5.999.000</div>
+              <div class="rating">★★★★★</div>
+              </div>
+            </div>
+  
+            <div class="product-card" onclick="location.href='detail.html?id=28'">
+              <div class="produk" data-kategori="Aksesoris Tangan">
+              <img src="gambar/gelangW (5).jpeg" alt="Produk 12" />
+              <div class="product-name">Coach Handbag Men </div>
+              <div class="product-price">Rp 5.999.000</div>
+              <div class="rating">★★★★★</div>
+              </div>
+            </div>
+  
+            <div class="product-card" onclick="location.href='detail.html?id=29'">
+              <div class="produk" data-kategori="Aksesoris Tangan">
+              <img src="gambar/gelangW (8).jpeg" alt="Produk 12" />
+              <div class="product-name">Coach Handbag Men New</div>
+              <div class="product-price">Rp 5.999.000</div>
+              <div class="rating">★★★★★</div>
+              </div>
+            </div>
+  
+            <div class="product-card" onclick="location.href='detail.html?id=30'">
+              <div class="produk" data-kategori="Aksesoris Tangan">
+              <img src="gambar/gelangW (9).jpeg" alt="Produk 12" />
+              <div class="product-name">Carzy Horse Shoulder bag</div>
+              <div class="product-price">Rp 5.999.000</div>
+              <div class="rating">★★★★★</div>
+              </div>
+            </div>
+
+            <!-- Kategori Aksesoris Kepala -->
+            <div class="product-card" onclick="location.href='detail.html?id=1'">
+              <div class="produk" data-kategori="Aksesoris Kepala">
+              <img src="gambar/headphone1.jpeg" alt="Produk 1" />
+              <div class="product-name">Tas Trendy Channel</div>
+              <div class="product-price">Rp 6.500.000</div>
+              <div class="rating">★★★★☆</div>
+            </div>
+            </div>
+            <div class="product-card" onclick="location.href='detail.html?id=2'">
+              <div class="produk" data-kategori="Aksesoris Kepala">
+              <img src="gambar/headphone2.jpeg" alt="Produk 2" />
+              <div class="product-name">Tas YSL</div>
+              <div class="product-price">Rp 10.000</div>
+              <div class="rating">★★★★★</div>
+              </div>
+            </div>
+            <div class="product-card" onclick="location.href='detail.html?id=3'">
+              <div class="produk" data-kategori="Aksesoris Kepala">
+              <img src="gambar/Tws (1).jpeg" alt="Produk 3" />
+              <div class="product-name">Tas Pria </div>
+              <div class="product-price">Rp 15.000</div>
+              <div class="rating">★★★★☆</div>
+              </div>
+            </div>
+            <div class="product-card" onclick="location.href='detail.html?id=4'">
+              <div class="produk" data-kategori="Aksesoris Kepala">
+                <img src="gambar/Tws (2).jpeg" alt="Produk 4" />
+                <div class="product-name">Shoulder Bag Pria</div>
+                <div class="product-price">Rp 50.000</div>
+                <div class="rating">★★★★☆</div>
+                </div>
+              </div>
+            
+              <div class="product-card" onclick="location.href='detail.html?id=5'">
+                <div class="produk" data-kategori="Aksesoris Kepala">
+                <img src="gambar/Tws (3).jpeg" alt="Produk 5" />
+                <div class="product-name">Handbag miu miu</div>
+                <div class="product-price">Rp 50.000</div>
+                <div class="rating">★★★★★</div>
+                </div>
+              </div>
+           
+              <div class="product-card" onclick="location.href='detail.html?id=6'">
+                <div class="produk" data-kategori="Aksesoris Kepala">
+                <img src="gambar/Tws (4).jpeg" alt="Produk 6" />
+                <div class="product-name">Sling bag YSL</div>
+                <div class="product-price">Rp 1.500.000</div>
+                <div class="rating">★★★★★</div>
+                </div>
+              </div>
+           
+              <div class="product-card" onclick="location.href='detail.html?id=7'">
+                <div class="produk" data-kategori="Aksesoris Kepala">
+                <img src="gambar/Tws (5).jpeg" alt="Produk 7" />
+                <div class="product-name">Handbag Gucci</div>
+                <div class="product-price">Rp 1.650.000</div>
+                <div class="rating">★★★★★</div>
+                </div>
+              </div>
+        
+              <div class="product-card" onclick="location.href='detail.html?id=8'">
+                <div class="produk" data-kategori="Aksesoris Kepala">
+                <img src="gambar/Tws (6).jpeg" alt="Produk 8" />
+                <div class="product-name">Mossdom Sling bag</div>
+                <div class="product-price">Rp 1.505.000</div>
+                <div class="rating">★★★★★</div>
+                </div>
+              </div>
+              
+              <div class="product-card" onclick="location.href='detail.html?id=9'">
+                <div class="produk" data-kategori="Aksesoris Kepala">
+                <img src="gambar/Tws (7).jpeg" alt="Produk 9" />
+                <div class="product-name">Dior Sling bag</div>
+                <div class="product-price">Rp 2.200.000</div>
+                <div class="rating">★★★★★</div>
+                </div>
+              </div>
+        
+              <div class="product-card" onclick="location.href='detail.html?id=10'">
+                <div class="produk" data-kategori="Aksesoris Kepala">
+                <img src="gambar/Kcmt (3).jpeg" alt="Produk 10" />
+                <div class="product-name">Shoulder bag Gucci </div>
+                <div class="product-price">Rp 950.000</div>
+                <div class="rating">★★★★★</div>
+                </div>
+              </div>
+        
+              <div class="product-card" onclick="location.href='detail.html?id=11'">
+                <div class="produk" data-kategori="Aksesoris Kepala">
+                <img src="gambar/Kcmt (4).jpeg" alt="Produk 11" />
+                <div class="product-name">Dior Shoulder Bag</div>
+                <div class="product-price">Rp 2.950.000</div>
+                <div class="rating">★★★★★</div>
+                </div>
+              </div>
+        
+              <div class="product-card" onclick="location.href='detail.html?id=12'">
+                <div class="produk" data-kategori="Aksesoris Kepala">
+                <img src="gambar/Tws (10).jpeg" alt="Produk 12" />
+                <div class="product-name">Dior Shoulder bag</div>
+                <div class="product-price">Rp 5.999.000</div>
+                <div class="rating">★★★★★</div>
+                </div>
+              </div>
+    
+              <div class="product-card" onclick="location.href='detail.html?id=13'">
+                <div class="produk" data-kategori="Aksesoris Kepala">
+                <img src="gambar/Jepitan (1).jpeg" alt="Produk 12" />
+                <div class="product-name">LV Shoulder bag</div>
+                <div class="product-price">Rp 5.999.000</div>
+                <div class="rating">★★★★★</div>
+                </div>
+              </div>
+    
+              <div class="product-card" onclick="location.href='detail.html?id=14'">
+                <div class="produk" data-kategori="Aksesoris Kepala">
+                <img src="gambar/Jepitan (2).jpeg" alt="Produk 12" />
+                <div class="product-name">Carit&Koty Shoulder bag</div>
+                <div class="product-price">Rp 5.999.000</div>
+                <div class="rating">★★★★★</div>
+                </div>
+              </div>
+    
+              <div class="product-card" onclick="location.href='detail.html?id=15'">
+                <div class="produk" data-kategori="Aksesoris Kepala">
+                <img src="gambar/Jepitan (3).jpeg" alt="Produk 12" />
+                <div class="product-name">Carit&Koty Shoulder bag</div>
+                <div class="product-price">Rp 5.999.000</div>
+                <div class="rating">★★★★★</div>
+                </div>
+              </div>
+    
+              <div class="product-card" onclick="location.href='detail.html?id=16'">
+                <div class="produk" data-kategori="Aksesoris Kepala">
+                <img src="gambar/Jepitan (4).jpeg" alt="Produk 12" />
+                <div class="product-name"> Shoulder bag</div>
+                <div class="product-price">Rp 5.999.000</div>
+                <div class="rating">★★★★★</div>
+                </div>
+              </div>
+    
+              <div class="product-card" onclick="location.href='detail.html?id=17'">
+                <div class="produk" data-kategori="Aksesoris Kepala">
+                <img src="gambar/Jepitan (5).jpeg" alt="Produk 12" />
+                <div class="product-name">YSL new Shoulder bag</div>
+                <div class="product-price">Rp 5.999.000</div>
+                <div class="rating">★★★★★</div>
+                </div>
+              </div>
+    
+              <div class="product-card" onclick="location.href='detail.html?id=18'">
+                <div class="produk" data-kategori="Aksesoris Kepala">
+                <img src="gambar/Jepitan (6).jpeg" alt="Produk 12" />
+                <div class="product-name">Celine Shoulder bag</div>
+                <div class="product-price">Rp 5.999.000</div>
+                <div class="rating">★★★★★</div>
+                </div>
+              </div>
+    
+              <div class="product-card" onclick="location.href='detail.html?id=19'">
+                <div class="produk" data-kategori="Aksesoris Kepala">
+                <img src="gambar/Jepitan (7).jpeg" alt="Produk 12" />
+                <div class="product-name">Chasler&Kratch Sling bag</div>
+                <div class="product-price">Rp 5.999.000</div>
+                <div class="rating">★★★★★</div>
+                </div>
+              </div>
+    
+              <div class="product-card" onclick="location.href='detail.html?id=20'">
+                <div class="produk" data-kategori="Aksesoris Kepala">
+                <img src="gambar/Jepitan (8).jpeg" alt="Produk 12" />
+                <div class="product-name">Christian Dior Shoulder bag</div>
+                <div class="product-price">Rp 5.999.000</div>
+                <div class="rating">★★★★★</div>
+                </div>
+              </div>
+    
+              <div class="product-card" onclick="location.href='detail.html?id=21'">
+                <div class="produk" data-kategori="Aksesoris Kepala">
+                <img src="gambar/Jepitan (9).jpeg" alt="Produk 12" />
+                <div class="product-name">LV Men Shoulder bag</div>
+                <div class="product-price">Rp 5.999.000</div>
+                <div class="rating">★★★★★</div>
+                </div>
+              </div>
+    
+              <div class="product-card" onclick="location.href='detail.html?id=22'">
+                <div class="produk" data-kategori="Aksesoris Kepala">
+                <img src="gambar/Topi (1).jpeg" alt="Produk 12" />
+                <div class="product-name"> Sling bag Men</div>
+                <div class="product-price">Rp 5.999.000</div>
+                <div class="rating">★★★★★</div>
+                </div>
+              </div>
+    
+              <div class="product-card" onclick="location.href='detail.html?id=23'">
+                <div class="produk" data-kategori="Aksesoris Kepala">
+                <img src="gambar/Topi (5).jpeg" alt="Produk 12" />
+                <div class="product-name"> Shoulder bag Men</div>
+                <div class="product-price">Rp 5.999.000</div>
+                <div class="rating">★★★★★</div>
+                </div>
+              </div>
+    
+              <div class="product-card" onclick="location.href='detail.html?id=24'">
+                <div class="produk" data-kategori="Aksesoris Kepala">
+                <img src="gambar/Topi (2).jpeg" alt="Produk 12" />
+                <div class="product-name"> Shoulder bag Men kece</div>
+                <div class="product-price">Rp 5.999.000</div>
+                <div class="rating">★★★★★</div>
+                </div>
+              </div>
+    
+              <div class="product-card" onclick="location.href='detail.html?id=25'">
+                <div class="produk" data-kategori="Aksesoris Kepala">
+                <img src="gambar/Topi (3).jpeg" alt="Produk 12" />
+                <div class="product-name"> Special Shoulder bag</div>
+                <div class="product-price">Rp 5.999.000</div>
+                <div class="rating">★★★★★</div>
+                </div>
+              </div>
+    
+              <div class="product-card" onclick="location.href='detail.html?id=26'">
+                <div class="produk" data-kategori="Aksesoris Kepala">
+                <img src="gambar/Topi (6).jpeg" alt="Produk 12" />
+                <div class="product-name">LV Shoulder&Handbag</div>
+                <div class="product-price">Rp 5.999.000</div>
+                <div class="rating">★★★★★</div>
+                </div>
+              </div>
+    
+              <div class="product-card" onclick="location.href='detail.html?id=27'">
+                <div class="produk" data-kategori="Aksesoris Kepala">
+                <img src="gambar/Topi (5).jpeg" alt="Produk 12" />
+                <div class="product-name">New Sling bag Men</div>
+                <div class="product-price">Rp 5.999.000</div>
+                <div class="rating">★★★★★</div>
+                </div>
+              </div>
+    
+              <div class="product-card" onclick="location.href='detail.html?id=28'">
+                <div class="produk" data-kategori="Aksesoris Kepala">
+                <img src="gambar/Topi (7).jpeg" alt="Produk 12" />
+                <div class="product-name">Coach Handbag Men </div>
+                <div class="product-price">Rp 5.999.000</div>
+                <div class="rating">★★★★★</div>
+                </div>
+              </div>
+    
+              <div class="product-card" onclick="location.href='detail.html?id=29'">
+                <div class="produk" data-kategori="Aksesoris Kepala">
+                <img src="gambar/Kcmt (1).jpeg" alt="Produk 12" />
+                <div class="product-name">Coach Handbag Men New</div>
+                <div class="product-price">Rp 5.999.000</div>
+                <div class="rating">★★★★★</div>
+                </div>
+              </div>
+    
+              <div class="product-card" onclick="location.href='detail.html?id=30'">
+                <div class="produk" data-kategori="Aksesoris Kepala">
+                <img src="gambar/Kcmt (2).jpeg" alt="Produk 12" />
+                <div class="product-name">Carzy Horse Shoulder bag</div>
+                <div class="product-price">Rp 5.999.000</div>
+                <div class="rating">★★★★★</div>
+                </div>
+              </div>
+
+
+          <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            const kategori = urlParams.get("kategori");
+          
+            document.querySelector("h2").textContent = "Produk Kategori: " + kategori;
+          
+            const semuaProduk = document.querySelectorAll(".produk");
+            semuaProduk.forEach((produk) => {
+              if (produk.dataset.kategori !== kategori) {
+                produk.style.display = "none";
+              }
+            });
+          </script>
       </section>
+
+      <footer class="site-footer">
+        <div class="footer-container">
+      
+          <div class="footer-section">
+            <h3>Tentang Kami</h3>
+            <p>AdorneeCo adalah toko online fashion yang menyediakan aksesoris dan produk trendi untuk kamu yang stylish!</p>
+          </div>
+      
+          <div class="footer-section">
+            <h3>Bantuan</h3>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Cara Pembelian</a></li>
+              <li><a href="#">Pengembalian Barang</a></li>
+            </ul>
+          </div>
+      
+          <div class="footer-section">
+            <h3>Ikuti Kami</h3>
+            <div class="sosmed-icons">
+              <a href="#"><img src="gambar/instagram.svg" alt="Instagram"></a>
+              <a href="#"><img src="gambar/twitter.svg" alt="Twitter"></a>
+              <a href="#"><img src="gambar/tiktok.svg" alt="Tiktok"></a>
+            </div>
+          </div>
+      
+        </div>
+      
+        <div class="footer-bottom">
+          <p>&copy; 2025 AdorneeCo. All rights reserved.</p>
+        </div>
+      </footer>
 </body>
 </html>
