@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Keranjang | AdorneeCo</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff8e7;
+      color: #4d2c1d;
+    }
+
+    header {
+      padding: 20px;
+      text-align: center;
+      background-color: #ffeccc;
+      font-size: 24px;
+      font-weight: bold;
+      border-bottom: 2px solid #f4d5b3;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 15px;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    th {
+      background-color: #fff2d6;
+    }
+
+    .product-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: start;
+    }
+
+    .product-info img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .quantity-input {
+      width: 60px;
+      padding: 5px;
+      text-align: center;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .remove-btn {
+      background-color: #a52a2a;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 6px 12px;
+      cursor: pointer;
+    }
+
+    .total {
+      text-align: right;
+      font-size: 18px;
+      margin-top: 20px;
+    }
+
+    .checkout-btn {
+      background-color: #a52a2a;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      float: right;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+
+      th {
+        text-align: left;
+      }
+
+      td {
+        padding: 10px 0;
+      }
+
+      .checkout-btn {
+        width: 100%;
+        float: none;
+      }
+
+      .total {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>Keranjang Saya</header>
+
+<div class="container">
+  <table>
+    <colgroup>
+      <col style="width: 35%">
+      <col style="width: 15%">
+      <col style="width: 15%">
+      <col style="width: 15%">
+      <col style="width: 20%">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>Produk</th>
+        <th>Harga</th>
+        <th>Jumlah</th>
+        <th>Sub Total</th>
+        <th>Aksi</th>
+      </tr>
+    </thead>
+    <tbody id="cart-body">
+      <tr>
+        <td>
+          <div class="product-info">
+            <img src="Jepitan (1).jpeg" alt="Jedai Aesthetic">
+            <span>Jedai Aesthetic</span>
+          </div>
+        </td>
+        <td class="harga">10000</td>
+        <td><input type="number" min="1" value="2" class="quantity-input" onchange="updateSubtotal(this)"></td>
+        <td class="subtotal">Rp 20.000</td>
+        <td><button class="remove-btn" onclick="removeRow(this)">Hapus</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="total">
+    Total: <span id="grand-total">Rp 20.000</span>
+  </div>
+
+  <button class="checkout-btn" onclick="goToCheckout()">Checkout</button>
+</div>
+
+<script>
+  function formatRupiah(angka) {
+    return 'Rp ' + angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  }
+
+  function updateSubtotal(input) {
+    const row = input.closest("tr");
+    const harga = parseInt(row.querySelector(".harga").innerText.replace(/[^\d]/g, ""));
+    const qty = parseInt(input.value);
+    const subtotal = harga * qty;
+    row.querySelector(".subtotal").innerText = formatRupiah(subtotal);
+    updateGrandTotal();
+  }
+
+  function updateGrandTotal() {
+    let total = 0;
+    const subtotals = document.querySelectorAll(".subtotal");
+    subtotals.forEach(el => {
+      total += parseInt(el.innerText.replace(/[^\d]/g, ""));
+    });
+    document.getElementById("grand-total").innerText = formatRupiah(total);
+  }
+
+  function removeRow(button) {
+    const row = button.closest("tr");
+    row.remove();
+    updateGrandTotal();
+  }
+
+  function goToCheckout() {
+    alert("Lanjut ke halaman checkout!");
+    // window.location.href = "checkout.html"; // aktifkan ini kalau udah ada halaman checkout
+  }
+
+  // Inisialisasi ulang total awal
+  window.onload = updateGrandTotal;
+</script>
+
+</body>
+</html>
