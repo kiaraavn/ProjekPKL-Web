@@ -21,9 +21,10 @@ $result = mysqli_query($koneksi, "SELECT * FROM produk ORDER BY id_produk DESC L
     }
 
     body {
+      margin: 0;
       font-family: 'Poppins', sans-serif;
       background-color: #f7ecc8;
-      color: #333;
+      color: #4d2c1d;
     }
 
     .container {
@@ -49,47 +50,36 @@ $result = mysqli_query($koneksi, "SELECT * FROM produk ORDER BY id_produk DESC L
       color: #633c1d;
     }
 
-    .nav-left,
-    .nav-center,
-    .nav-right {
-     display: flex;
-     align-items: center;
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: #fcf3d7;
+      border-bottom: 1px solid #ccc;
     }
 
-    .nav-center {
-     flex: 1;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-    }
-
-    .nav-links {
+    .nav-center ul {
       list-style: none;
       display: flex;
-      gap: 2rem;
-      padding: 0;
+      gap: 30px;
       margin: 0;
-      align-items: center;
+      padding: 0;
     }
 
-    .nav-links a {
+    .nav-center ul li a {
       text-decoration: none;
-      color: #633c1d;
-      font-weight: 500;
+      color: #4d2c1d;
+      font-weight: bold;
+      font-size: 18px;
     }
 
-    .nav-right a {
-     margin-left: 1rem;
-      color: #633c1d;
-     font-size: 1.2rem;
-    }
-
-    
-
-   
-    .nav-links i {
-        font-size: 1.2rem;
-         color: #633c1d;
+    .nav-icons a {
+      color: #4d2c1d;
+      margin-left: 20px;
+      font-size: 20px;
+      text-decoration: none;
     }
 
 
@@ -444,25 +434,43 @@ h2 {
 </head>
 <body>
   <!-- Navbar -->
-  <header class="navbar">
-    <div class="container">
-        <div class="nav-left">
-        <img src="gambar/logo.png" alt="Adorsmile Logo" class="logo">
+ <nav class="navbar">
+    <div class="logo">
+        <a href="index.php">
+          <img src="gambar/logo.png" alt="Aornee Co" style="height: 100px;">
+        </a>
+      </div>
+      
+    <div class="nav-center">
+      <ul>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="shop1.php">Shop</a></li>
+        <li><a href="about1.html" class="active">about</a></li>
+      </ul>
     </div>
-        <div class="nav-center">
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="shop.html">Shop</a></li>
-          <li><a href="about.html">About</a></li>
-          </ul>
+    <div class="nav-icons">
+      <a href="#"><i class="fas fa-search"></i></a>
+      <a href="user.php"><i class="fas fa-user"></i></a>
+       <a href="logout.php"><i class="fas fa-sign-out-alt"></i></a>
     </div>
-    <div class="nav-right">
-        <li><a href="#"><i class="fas fa-search"></i></a></li>
-          <li><a href="#"><i class="fas fa-heart"></i></a></li>
-          <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-    </div>   
-    </div>
-  </header>
+  </nav>
+  
+  <script>
+   const navLinks = document.querySelectorAll('ul li a');
+    
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        // Menghapus kelas active dari semua link
+        navLinks.forEach(link => link.classList.remove('active'));
+        // Menambahkan kelas active ke link yang diklik
+        this.classList.add('active');
+      });
+    });
+    
+  </script>
+  
+ 
+  
 
   <!-- Hero Section -->
   <section class="hero">
@@ -494,16 +502,16 @@ h2 {
     <!-- Kategori -->
   <section class="kategori-banner">
     <div class="kategori-item">
-      <img src="gambar/kategoriT.jpeg" alt="Kategori Tas">
-      <a href="kategori.php?kategori=tas" class="kategori-btn">Shop Now</a>
+      <img src="gambar/kategoriT.jpeg" alt="Tas">
+      <a href="kategori.php?kategori=1" class="kategori-btn">Shop Now</a>
     </div>
     <div class="kategori-item">
-      <img src="gambar/kategoriW.jpeg" alt="Kategori Tangan">
-      <a href="kategori.php?kategori=Aksesoris Tangan" class="kategori-btn">Shop Now</a>
+      <img src="gambar/kategoriW.jpeg" alt="Aksesoris Tangan">
+      <a href="kategori.php?kategori=2" class="kategori-btn">Shop Now</a>
     </div>
     <div class="kategori-item">
-      <img src="gambar/kategoriH.jpeg" alt="Kategori Aksesoris Kepala">
-      <a href="kategori.php?kategori=Aksesoris Kepala" class="kategori-btn">Shop Now</a>
+      <img src="gambar/kategoriH.jpeg" alt=" Aksesoris Kepala">
+      <a href="kategori.php?kategori=3" class="kategori-btn">Shop Now</a>
     </div>
   </section>
   
@@ -530,7 +538,7 @@ h2 {
   <div class="banner-container">
     <img src="gambar/flashsale.png" alt="Flash Sale Banner" class="banner-image">
     <div class="banner-button-wrapper">
-      <a href="shop.php" class="shop-button">Shop Now</a>
+      <a href="shop1.php" class="shop-button">Shop Now</a>
     </div>
   </div>
 </div>
@@ -574,7 +582,7 @@ h2 {
         <h3>Ikuti Kami</h3>
         <div class="sosmed-icons">
           <a href="#"><img src="gambar/instagram.svg" alt="Instagram"></a>
-          <a href="#"><img src="gambar/twi\" alt="Twitter"></a>
+          <a href="#"><img src="gambar/twitter.svg" alt="Twitter"></a>
           <a href="#"><img src="gambar/tiktok.svg" alt="Tiktok"></a>
         </div>
       </div>
@@ -585,6 +593,5 @@ h2 {
       <p>&copy; 2025 AdorneeCo. All rights reserved.</p>
     </div>
   </footer>
-  
 </body>
 </html>

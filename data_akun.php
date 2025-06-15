@@ -1,8 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['admin'])) {
-    header("Location: admin_login.php"); // Ganti sesuai nama file login
-    exit;
+    header("Location: admin_login.php"); 
 }
 include 'koneksi.php';
 

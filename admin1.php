@@ -1,19 +1,19 @@
 <?php
 session_start();
 
-// Koneksi database
+
 $koneksi = new mysqli("localhost", "root", "", "db_adornee");
 if ($koneksi->connect_error) {
     die("Koneksi gagal: " . $koneksi->connect_error);
 }
 
-// Cek session login admin (misal)
+
 if (!isset($_SESSION['admin'])) {
-    header("Location: login_admin.php");
+    header("Location: admin_login.php");
     exit();
 }
 
-// Ambil data hitungan dari database
+
 // Jumlah kategori
 $resultKategori = $koneksi->query("SELECT COUNT(*) as total FROM kategori");
 $rowKategori = $resultKategori->fetch_assoc();
@@ -111,9 +111,9 @@ $totalPayments = $rowPayments['total'];
       <a href="admin1.php" class="nav-link active">Dashboard</a>
       <a href="produk.php" class="nav-link">Daftar Produk</a>
       <a href="transaksi.php" class="nav-link">Transaksi</a>
-      <a href="akun.php" class="nav-link">Data Akun</a>
-      <a href="kategori.php" class="nav-link">Data Kategori</a>
-      <a href="logout.php" class="nav-link">Logout</a>
+      <a href="data_akun.php" class="nav-link">Data Akun</a>
+      <a href="data_kategori.php" class="nav-link">Data Kategori</a>
+      <a href="logout_admin.php" class="nav-link">Logout</a>
 
     </div>
 
